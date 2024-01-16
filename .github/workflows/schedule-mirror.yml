@@ -28,11 +28,14 @@ jobs:
         run: go run schedule.go --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_TOKEN }} --repository=${{ secrets.DOCKER_REPOSITORY }} --content='{"schedule-mirror":["ghcr.io/imagegenius/immich"]}' --outputPath=output.sh
       # 4. 发送邮件告知更新
       - name: Send mail
-        if: success()
+        if: failure()
         uses: dawidd6/action-send-mail@v2
         with:
           # SMTP服务器地址
           server_address: smtp.yeah.net
+          # SMTP用户凭据
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
           # SMTP服务器端口
           server_port: 465
           # 发件人邮箱地址
@@ -40,11 +43,7 @@ jobs:
           # 收件人邮箱地址
           to: triistop@yeah.net
           # 邮件标题
-          subject: Action Completed
+          subject: Action failed
           # 邮件正文
-          body: The action has been completed successfully.
-        env:
-          # SMTP用户凭据
-          SMTP_USERNAME: ${{ secrets.EMAIL_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          body: The action has been completed with errors.
 
