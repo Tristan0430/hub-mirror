@@ -23,7 +23,7 @@ func main() {
 	pflag.Parse()
 
 	// JSON 文件路径
-	filePath := "${GITHUB_WORKSPACE}/scheduledMirrors.json"
+	filePath := "scheduledMirrors.json"
 
 	// 读取 JSON 文件
 	file, err := os.Open(filePath)
