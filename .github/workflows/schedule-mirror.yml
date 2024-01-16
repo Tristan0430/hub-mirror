@@ -3,6 +3,7 @@ name: schedule-mirror
 
 # 创建定时任务
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
 
