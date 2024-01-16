@@ -7,7 +7,6 @@ import (
 	"os"
 	"sync"
 	"text/template"
-
 	"github.com/spf13/pflag"
 	"github.com/togettoyou/hub-mirror/pkg"
 )
