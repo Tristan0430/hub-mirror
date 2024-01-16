@@ -13,7 +13,6 @@ import (
 )
 
 var (
-	content    = pflag.StringP("content", "", "", "原始镜像，格式为：{ \"platform\": \"\", \"schedule-mirror\": [] }")
 	repository = pflag.StringP("repository", "", "", "推送仓库地址，为空默认为 hub.docker.com")
 	username   = pflag.StringP("username", "", "", "仓库用户名")
 	password   = pflag.StringP("password", "", "", "仓库密码")
