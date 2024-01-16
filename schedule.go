@@ -23,13 +23,28 @@ var (
 func main() {
 	pflag.Parse()
 
+	// JSON 文件路径
+	filePath := "${GITHUB_WORKSPACE}/scheduledMirrors.json"
+
+	// 读取 JSON 文件
+	file, err := os.Open(filePath)
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	// 将文件内容读取到字节切片中
+	byteValue, _ := ioutil.ReadAll(file)
+
+	// 初始化 HubMirrors 结构体
 	fmt.Println("验证原始镜像内容")
 	var hubMirrors struct {
 		Content  []string `json:"schedule-mirror"`
 		Platform string   `json:"platform"`
 	}
 
-	err := json.Unmarshal([]byte(*content), &hubMirrors)
+	// 反序列化 JSON 数据到 HubMirrors 结构体中
+	err = json.Unmarshal(byteValue, &hubMirrors)
 	if err != nil {
 		panic(err)
 	}
