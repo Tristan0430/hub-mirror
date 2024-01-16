@@ -26,5 +26,25 @@ jobs:
       # 3. 运行 go 代码
       - name: Run code
         run: go run schedule.go --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_TOKEN }} --repository=${{ secrets.DOCKER_REPOSITORY }} --content='{"schedule-mirror":["ghcr.io/imagegenius/immich"]}' --outputPath=output.sh
-      - name: echo
-        run: echo "Finished!"
+      # 4. 发送邮件告知更新
+      - name: Send mail
+        if: success()
+        uses: dawidd6/action-send-mail@v2
+        with:
+          # SMTP服务器地址
+          server_address: smtp.yeah.net
+          # SMTP服务器端口
+          server_port: 465
+          # 发件人邮箱地址
+          from: triistop@yeah.net
+          # 收件人邮箱地址
+          to: triistop@yeah.net
+          # 邮件标题
+          subject: Action Completed
+          # 邮件正文
+          body: The action has been completed successfully.
+        env:
+          # SMTP用户凭据
+          SMTP_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
