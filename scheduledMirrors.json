@@ -1,6 +1,7 @@
 {
   "platform":"",
   "schedule-mirror":[
-    "ghcr.io/imagegenius/immich"
+    "ghcr.io/imagegenius/immich",
+    "ghcr.io/wg-easy/wg-easy"
   ]
 }
