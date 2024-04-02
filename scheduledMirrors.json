@@ -1,7 +1,7 @@
 {
   "platform":"",
   "schedule-mirror":[
-    "ghcr.io/imagegenius/immich:noml",
+    "ghcr.io/imagegenius/immich:alpine",
     "ghcr.io/wg-easy/wg-easy"
   ]
 }
