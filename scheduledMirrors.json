@@ -3,6 +3,7 @@
   "schedule-mirror":[
     "ghcr.io/imagegenius/immich:alpine",
     "ghcr.io/wg-easy/wg-easy",
-    "ghcr.io/gethomepage/homepage:latest"
+    "ghcr.io/gethomepage/homepage:latest",
+    "ghcr.io/teableio/teable:latest"
   ]
 }
