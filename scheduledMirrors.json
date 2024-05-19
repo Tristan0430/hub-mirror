@@ -5,6 +5,7 @@
     "ghcr.io/wg-easy/wg-easy",
     "ghcr.io/gethomepage/homepage:latest",
     "ghcr.io/teableio/teable:latest",
-    "ghcr.io/teableio/teable-db-migrate:latest"
+    "ghcr.io/teableio/teable-db-migrate:latest",
+    "ghcr.io/heyputer/puter:latest"
   ]
 }
