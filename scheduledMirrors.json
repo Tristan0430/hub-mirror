@@ -6,6 +6,7 @@
     "ghcr.io/gethomepage/homepage:latest",
     "ghcr.io/teableio/teable:latest",
     "ghcr.io/teableio/teable-db-migrate:latest",
-    "ghcr.io/heyputer/puter:latest"
+    "ghcr.io/heyputer/puter:latest",
+    "ghcr.io/seriousm4x/upsnap"
   ]
 }
